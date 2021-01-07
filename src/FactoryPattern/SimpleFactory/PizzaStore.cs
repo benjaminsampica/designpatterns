@@ -1,10 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FactoryPattern.SimpleFactory
+﻿namespace FactoryPattern.SimpleFactory
 {
-    class PizzaStore
+    public class PizzaStore
     {
+        public Pizza OrderPizza(string type)
+        {
+            var simplePizzaFactory = new SimplePizzaFactory();
+            
+            var pizza = simplePizzaFactory.CreatePizza(type);
+
+            pizza.Prepare();
+            pizza.Bake();
+            pizza.Cut();
+            pizza.Box();
+
+            return pizza;
+        }
     }
 }

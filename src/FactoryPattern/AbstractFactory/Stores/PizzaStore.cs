@@ -1,6 +1,8 @@
-﻿namespace FactoryPattern.Factory
+﻿using FactoryPattern.AbstractFactory.Pizzas;
+
+namespace FactoryPattern.AbstractFactory.Stores
 {
-    public abstract class PizzaStore
+    internal abstract class PizzaStore
     {
         public Pizza OrderPizza(string type)
         {
@@ -14,7 +16,6 @@
             return pizza;
         }
 
-        // The factory exists in each type of store that is subclassed.
         protected abstract Pizza CreatePizza(string type);
     }
 }
