@@ -4,7 +4,7 @@ namespace FactoryPattern.Factory.ChicagoPizza
 {
     public class ChicagoPizzaStore : PizzaStore
     {
-        public override Pizza CreatePizza(string type)
+        protected override Pizza CreatePizza(string type)
         {
             switch (type)
             {
